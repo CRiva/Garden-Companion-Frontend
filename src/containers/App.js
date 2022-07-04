@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const App = () => {
   return (
-    <div>
+    <div className='d-flex flex-column min-vh-100'>
       <nav className="navbar navbar-expand-lg navbar-dark bg-secondary mb-3">
         <div className="container-fluid">
           <Link className='navbar-brand' to="/">Gardener's Companion</Link>
@@ -23,6 +23,10 @@ const App = () => {
         </div>
       </nav>
       <Outlet />
+      <br />
+      <footer className='py-3 text-center bg-light mt-auto'>
+        Garden Companion - 2022 by <a href='https://instagrom.com/studioriva'>Connor Riva</a>
+      </footer>
     </div>
   );
 }

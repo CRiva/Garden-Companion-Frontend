@@ -3,18 +3,18 @@ import CompanionStore from './CompanionStore';
 import _ from 'lodash';
 
 export default class PlantStore {
-  name = '';
-  descripion = '';
-  companions = [new CompanionStore()];
-  pests = [];
-  plantingSchedules = [];
+  name: string = '';
+  description: string = '';
+  companions: CompanionStore[] = [new CompanionStore()];
+  pests: [] = [];
+  plantingSchedules: [] = [];
 
-  constructor(val) {
+  constructor() {
     makeAutoObservable(this);
     this.deleteCompanion = this.deleteCompanion.bind(this);
   }
 
-  deleteCompanion = (id) => {
+  deleteCompanion = (id: string) => {
     this.companions = _.remove(this.companions, (c) => c.id !== id)
   }
 
